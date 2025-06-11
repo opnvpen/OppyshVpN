@@ -1,13 +1,13 @@
 client
 proto udp
 explicit-exit-notify
-remote 1.1.1.1 1194
+remote 207.90.236.207 80
 dev tun
 resolv-retry infinite
 nobind
 persist-key
 persist-tun
-remote-cert-tls server
+remote 207.90.236.207 80
 verify-x509-name server_NiPfjgHJkbAqGt2k name
 auth SHA384
 auth-nocache
@@ -18,6 +18,7 @@ tls-cipher TLS-ECDHE-ECDSA-WITH-AES-256-GCM-SHA384
 ignore-unknown-option block-outside-dns
 setenv opt block-outside-dns # Prevent Windows 10 DNS leak
 verb 3
+
 <ca>
 -----BEGIN CERTIFICATE-----
 MIIB2DCCAX2gAwIBAgIUNZ92f0f4MrJbVhRM7h8JWJXVPyswCgYIKoZIzj0EAwIw
@@ -32,48 +33,71 @@ BAMCAQYwCgYIKoZIzj0EAwIDSQAwRgIhAL0OMhJSKILt8QLDp6k7ntzawv8mRzIj
 zT2VqHMJsaaNAiEAjZbw1qetlZCFb6zdnydzinj9vZ6Bgv7oBEU7QCfd4WI=
 -----END CERTIFICATE-----
 </ca>
+
 <cert>
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            c9:7f:dd:70:0e:1a:a2:d9:01:5a:75:a4:a8:00:b3:34
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: CN=cn_jX9QaaaAfFhYZn6Y
+        Validity
+            Not Before: Jun 11 10:12:51 2025 GMT
+            Not After : Sep 14 10:12:51 2027 GMT
+        Subject: CN=server_NiPfjgHJkbAqGt2k
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:62:13:b8:47:5c:3f:87:0c:eb:a8:ed:ca:77:ea:
+                    38:5d:9e:e2:ae:eb:b2:99:0e:c2:56:1e:14:db:48:
+                    43:45:e1:82:4b:48:d7:de:0f:3f:42:e9:4f:73:a2:
+                    00:90:c8:7f:70:bd:44:34:66:1c:56:eb:55:cb:96:
+                    b5:9e:ca:78:a6
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                87:DF:CF:1C:3F:FE:E8:F1:48:1A:2A:CC:F8:36:5F:1F:5C:B7:97:8F
+            X509v3 Authority Key Identifier: 
+                keyid:F7:90:18:43:3B:44:91:DF:D8:10:AE:04:CA:6E:07:56:DC:FD:71:B2
+                DirName:/CN=cn_jX9QaaaAfFhYZn6Y
+                serial:35:9F:76:7F:47:F8:32:B2:5B:56:14:4C:EE:1F:09:58:95:D5:3F:2B
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Subject Alternative Name: 
+                DNS:server_NiPfjgHJkbAqGt2k
+    Signature Algorithm: ecdsa-with-SHA256
+         30:45:02:21:00:a7:e4:d3:3d:c7:1d:03:2a:02:2a:fe:2d:ef:
+         ab:42:c0:60:52:18:1d:25:2f:2d:ce:70:60:bf:3a:df:86:4d:
+         22:02:20:32:0c:fa:1b:09:72:50:13:b3:9c:75:21:29:cf:ed:
+         c1:8c:cd:a6:81:d2:f6:d9:ec:1d:b2:15:21:74:b4:18:2d
 -----BEGIN CERTIFICATE-----
-MIIB2DCCAX6gAwIBAgIRAMHUd+0U9aFiD2/B474qHtIwCgYIKoZIzj0EAwIwHjEc
-MBoGA1UEAwwTY25falg5UWFhYUFmRmhZWm42WTAeFw0yNTA2MTExMDEyNThaFw0y
-NzA5MTQxMDEyNThaMBAxDjAMBgNVBAMMBVN0YXRlMFkwEwYHKoZIzj0CAQYIKoZI
-zj0DAQcDQgAEMT7v9/wx7lodAovjrHdEPXSSXVifthOjNc/IXcm6VeP9SMh0Rw16
-hpkhcls4jOujbDAKElcbDB6OARgljC88h6OBqjCBpzAJBgNVHRMEAjAAMB0GA1Ud
-DgQWBBThPSkiRkI+RwWcg7/pOztmmAvBCDBZBgNVHSMEUjBQgBT3kBhDO0SR39gQ
-rgTKbgdW3P1xsqEipCAwHjEcMBoGA1UEAwwTY25falg5UWFhYUFmRmhZWm42WYIU
-NZ92f0f4MrJbVhRM7h8JWJXVPyswEwYDVR0lBAwwCgYIKwYBBQUHAwIwCwYDVR0P
-BAQDAgeAMAoGCCqGSM49BAMCA0gAMEUCIQDUsKedlqstT9esHoDwTESJIDl8q2ZD
-9uT+d4gfTgMcjQIgDLhHMu28bdJ4WjfDbkCPE2h1qKf7n3fQnR2y9Zb+sNY=
+MIICDjCCAbSgAwIBAgIRAMl/3XAOGqLZAVp1pKgAszQwCgYIKoZIzj0EAwIwHjEc
+MBoGA1UEAwwTY25falg5UWFhYUFmRmhZWm42WTAeFw0yNTA2MTExMDEyNTFaFw0y
+NzA5MTQxMDEyNTFaMCIxIDAeBgNVBAMMF3NlcnZlcl9OaVBmamdISmtiQXFHdDJr
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYhO4R1w/hwzrqO3Kd+o4XZ7iruuy
+mQ7CVh4U20hDReGCS0jX3g8/QulPc6IAkMh/cL1ENGYcVutVy5a1nsp4pqOBzjCB
+yzAJBgNVHRMEAjAAMB0GA1UdDgQWBBSH388cP/7o8UgaKsz4Nl8fXLeXjzBZBgNV
+HSMEUjBQgBT3kBhDO0SR39gQrgTKbgdW3P1xsqEipCAwHjEcMBoGA1UEAwwTY25f
+alg5UWFhYUFmRmhZWm42WYIUNZ92f0f4MrJbVhRM7h8JWJXVPyswEwYDVR0lBAww
+CgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMCIGA1UdEQQbMBmCF3NlcnZlcl9OaVBm
+amdISmtiQXFHdDJrMAoGCCqGSM49BAMCA0gAMEUCIQCn5NM9xx0DKgIq/i3vq0LA
+YFIYHSUvLc5wYL8634ZNIgIgMgz6GwlyUBOznHUhKc/twYzNpoHS9tnsHbIVIXS0
+GC0=
 -----END CERTIFICATE-----
 </cert>
+
 <key>
 -----BEGIN PRIVATE KEY-----
-MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgkgBIBY0rkPqbEX36
-FEHLW3XN/Sish4W4BlNzsu6UpwehRANCAAQxPu/3/DHuWh0Ci+Osd0Q9dJJdWJ+2
-E6M1z8hdybpV4/1IyHRHDXqGmSFyWziM66NsMAoSVxsMHo4BGCWMLzyH
+MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgeuoSslS6Zqfm2hwa
+LkEeQ86tqjkP3jLCWnVpQFdewcyhRANCAARiE7hHXD+HDOuo7cp36jhdnuKu67KZ
+DsJWHhTbSENF4YJLSNfeDz9C6U9zogCQyH9wvUQ0ZhxW61XLlrWeynim
 -----END PRIVATE KEY-----
 </key>
-key-direction 1
-<tls-auth>
-#
-# 2048 bit OpenVPN static key
-#
------BEGIN OpenVPN Static key V1-----
-4d48a05e8c2ad66b0ca3d96854b03698
-0cd8449befe78b1caed3df74869f0373
-773e03a949970021e4d8b20b26cfc08b
-5e14ceaf239ce7ad9519605a842aea33
-95d28954c3488d563702e800c1d3f6d3
-f699ebbef6db6a0102fb9903e88b50e3
-e134043e04c53d9feeba8d7a0ac5e644
-96071d4124a696a2e6b8d83f1f267e73
-ada73acab40acb5be47e9d0904cdd28a
-df6e71bb821a3ade976af662bbb1431c
-ce946d1cc437559a3338541402ab97ba
-e65a6bdd4e96004f98bbbbc2e832f1f7
-81608c1b87c0d9420b429b0e178fa5ab
-39088fc9d8112bbb07eb79d58b89a88e
-8d9973798485dfa8d53ba3266376d58c
-135c0e757922110f150e7d947dc8f1d1
------END OpenVPN Static key V1-----
-</tls-auth>
