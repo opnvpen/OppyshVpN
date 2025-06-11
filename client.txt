@@ -1,7 +1,7 @@
 client
 proto udp
 explicit-exit-notify
-remote 207.90.236.207 80
+remote 1.1.1.1 1194
 dev tun
 resolv-retry infinite
 nobind
